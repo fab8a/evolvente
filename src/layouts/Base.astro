@@ -1,0 +1,44 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+const {
+    title = "Evolvente | Estudio de arquitectura independiente",
+    description = "Evolvente es un estudio de arquitectura independiente que ofrece servicios de diseño y construcción de edificios y espacios públicos.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="arquitectura, diseño, construcción, edificios, espacios públicos, arquitecto"
+        />
+        <title>{title}</title>
+        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link rel="shortcut icon" href="/favicon.ico" />
+    </head>
+    <body>
+        <Header />
+        <slot />
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+</style>

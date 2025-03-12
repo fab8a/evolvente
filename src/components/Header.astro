@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import headerBg from "../assets/images/white-pattern.jpg";
+---
+
+<header>
+    <div class="header-background">
+        <div class="overlay"></div>
+        <div class="header-container">
+            <div class="logotipo">
+                <a href="index.html">
+                    <img
+                        src="public/isotipo.png"
+                        alt="Logo Evolvente Arquitectura"
+                        width="200px"
+                    />
+                </a>
+            </div>
+            <div class="titulo">
+                <div class="tipografia">
+                    <img
+                        src="public/tipografia.png"
+                        alt="Tipografía Evolvente Arquitectura"
+                        width="500px"
+                    />
+                </div>
+                <div class="descripcion">
+                    Estudio independiente de diseño y arquitectura
+                </div>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-links">
+                    <li><a href="/about">Servicios</a></li>
+                    <li><a href="/projects">Proyectos</a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
