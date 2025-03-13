@@ -1,0 +1,27 @@
+---
+const { title = "Evolvente", subtitle = "Estudio de diseño y arquitectura" } =
+    Astro.props;
+
+import { getImage } from "astro:assets";
+import backgroundImage from "../assets/images/background.webp";
+const optimizedBackground = await getImage({
+    src: backgroundImage,
+    format: "webp", // Convert to WebP for better compression
+    quality: 80, // Adjust quality as needed
+    width: 1920, // Resize to appropriate width
+});
+---
+
+<section
+    class="hero"
+    style={`background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(${optimizedBackground.src})`}
+>
+    <div class="hero-content">
+        <img
+            src="public/isotipo.png"
+            alt="Logotipo Evolvente Arquitectura"
+            width="300px"
+        />
+        <h3>{subtitle}</h3>
+    </div>
+</section>

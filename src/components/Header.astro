@@ -1,40 +1,44 @@
 ---
-import { Image } from "astro:assets";
-import headerBg from "../assets/images/white-pattern.jpg";
+const tipoImagen = "/tipografia_cropped.png";
+
+const navItems = [
+    { name: "Estudio", url: "/about" },
+    { name: "Proyectos", url: "/projects" },
+    { name: "Contacto", url: "/contact" },
+];
+const currentPath = Astro.url.pathname;
 ---
 
 <header>
-    <div class="header-background">
-        <div class="overlay"></div>
-        <div class="header-container">
-            <div class="logotipo">
-                <a href="index.html">
-                    <img
-                        src="public/isotipo.png"
-                        alt="Logo Evolvente Arquitectura"
-                        width="200px"
-                    />
-                </a>
-            </div>
-            <div class="titulo">
-                <div class="tipografia">
-                    <img
-                        src="public/tipografia.png"
-                        alt="Tipografía Evolvente Arquitectura"
-                        width="500px"
-                    />
-                </div>
-                <div class="descripcion">
-                    Estudio independiente de diseño y arquitectura
-                </div>
-            </div>
-            <nav class="header-nav">
-                <ul class="nav-links">
-                    <li><a href="/about">Servicios</a></li>
-                    <li><a href="/projects">Proyectos</a></li>
-                    <li><a href="/contact">Contacto</a></li>
-                </ul>
-            </nav>
+    <div class="header-container">
+        <div class="tipografia">
+            <a href="index.html">
+                <img
+                    src={tipoImagen}
+                    alt="Tipografía Evolvente Arquitectura"
+                    width={300}
+                />
+            </a>
         </div>
+        <nav class="header-nav">
+            <ul>
+                {
+                    navItems.map((item) => (
+                        <li>
+                            <a
+                                href={item.url}
+                                class={
+                                    currentPath.startsWith(item.url)
+                                        ? "active"
+                                        : ""
+                                }
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
 </header>

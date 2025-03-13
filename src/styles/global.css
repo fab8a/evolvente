@@ -20,46 +20,93 @@
     font-style: normal;
     font-display: swap;
 }
+:root {
+    --header-height: 100px;
+    --color-primary: #740c10;
+    --color-secondary: #ff0000;
+    --color-tertiary: #d1d3d4;
+}
+main {
+    flex: 1 0 auto;
+    /* Remove any margin/padding that might affect the header */
+    margin-top: 0;
+    padding-top: 0;
+}
 body {
-    font-family: "HelveticaNeue";
+    font-family: "HelveticaNeue-Light";
     font-size: 16px;
     line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fffdfa;
 }
 header {
-    width: 100%;
     position: fixed;
-    font-family: "HelveticaNeue-Light";
-    color: #740c10;
-}
-.header-background {
-    position: relative;
-    background-image: url("src/assets/images/header2.webp");
-    background-size: cover;
-    background-position: 0% 15%;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: var(--header-height);
 }
 .header-container {
     position: relative;
     display: flex;
-    justify-content: space-around;
-    padding: 1rem 2rem;
-    margin: 0 auto;
-    z-index: 1; /* Above the overlay */
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    margin-right: 60px;
 }
-.titulo {
-    padding-top: 30px;
-}
-.titulo > .descripcion {
-    padding-left: 55px;
-    font-size: 36Q;
-}
-.nav-links {
-    margin-top: 60px;
-    font-size: 30px;
+nav ul {
     display: flex;
-    list-style-type: none;
-    justify-content: flex-end;
+    list-style: none;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
 }
-.nav-links li {
-    margin-left: 50px;
+nav li {
+    position: relative;
+}
+nav a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+}
+nav a:hover,
+nav a.active {
+    color: var(--color-secondary);
+}
+nav a:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+nav a:hover:after,
+nav a.active:after {
+    width: 100%;
+}
+.hero {
+    margin-top: var(
+        --header-height,
+        80px
+    ); /* This pushes the hero below the header */
+    min-height: calc(
+        100vh - var(--header-height, 80px)
+    ); /* This makes it fill the remaining viewport */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero-content {
+    font-size: 2rem;
+    font-family: "HelveticaNeue-Light";
 }
