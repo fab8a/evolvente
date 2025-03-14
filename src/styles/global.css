@@ -20,6 +20,13 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "HelveticaNeue-UltraLight";
+    src: url("/fonts/HelveticaNeue-UltraLight.ttf") format("truetype");
+    font-weight: ultralight;
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --header-height: 100px;
     --color-primary: #740c10;
@@ -34,60 +41,10 @@ main {
 }
 body {
     font-family: "HelveticaNeue-Light";
-    font-size: 16px;
-    line-height: 1.5;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #fffdfa;
-}
-header {
-    position: fixed;
-    width: 100%;
-    height: var(--header-height);
-}
-.header-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    margin-right: 60px;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 3rem;
-    margin: 0;
-    padding: 0;
-}
-nav li {
-    position: relative;
-}
-nav a {
-    text-decoration: none;
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0;
-}
-nav a:hover,
-nav a.active {
-    color: var(--color-secondary);
-}
-nav a:after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-secondary);
-    transition: width 0.3s ease;
-}
-nav a:hover:after,
-nav a.active:after {
-    width: 100%;
+    background-color: white;
 }
 .hero {
     margin-top: var(
@@ -101,12 +58,24 @@ nav a.active:after {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     color: white;
 }
 .hero-content {
-    font-size: 2rem;
-    font-family: "HelveticaNeue-Light";
+    color: var(--color-primary);
+    width: 100%;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-content > img {
+    margin-left: 75px;
+}
+
+.hero-text {
+    font-size: 2.75rem;
+    font-family: "HelveticaNeue-UltraLight";
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
