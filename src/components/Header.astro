@@ -1,5 +1,5 @@
 ---
-const tipoImagen = "/tipografia_cropped.png";
+const tipografiaImagen = "/tipografia_cropped.png";
 
 const navItems = [
     { name: "Estudio", url: "/about" },
@@ -13,11 +13,7 @@ const currentPath = Astro.url.pathname;
     <div class="header-container">
         <div class="tipografia">
             <a href="index.html">
-                <img
-                    src={tipoImagen}
-                    alt="Tipografía Evolvente Arquitectura"
-                    width={300}
-                />
+                <img src={tipografiaImagen} alt="Tipografía Evolvente Arquitectura" width={300} />
             </a>
         </div>
         <nav class="header-nav">
@@ -27,11 +23,7 @@ const currentPath = Astro.url.pathname;
                         <li>
                             <a
                                 href={item.url}
-                                class={
-                                    currentPath.startsWith(item.url)
-                                        ? "active"
-                                        : ""
-                                }
+                                class={currentPath.startsWith(item.url) ? "active" : ""}
                             >
                                 {item.name}
                             </a>

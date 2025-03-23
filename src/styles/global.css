@@ -35,8 +35,7 @@
 }
 main {
     flex: 1 0 auto;
-    /* Remove any margin/padding that might affect the header */
-    margin-top: 0;
+    margin-top: var(--header-height, 79px);
     padding-top: 0;
 }
 body {
@@ -45,37 +44,4 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: white;
-}
-.hero {
-    margin-top: var(
-        --header-height,
-        80px
-    ); /* This pushes the hero below the header */
-    min-height: calc(
-        100vh - var(--header-height, 80px)
-    ); /* This makes it fill the remaining viewport */
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    color: white;
-}
-.hero-content {
-    color: var(--color-primary);
-    width: 100%;
-    margin-top: -10px;
-    display: flex;
-    flex-direction: column;
-}
-.hero-content > img {
-    margin-left: 75px;
-}
-
-.hero-text {
-    font-size: 2.75rem;
-    font-family: "HelveticaNeue-UltraLight";
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
