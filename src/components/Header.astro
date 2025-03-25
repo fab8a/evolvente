@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 <header>
     <div class="header-container">
         <div class="tipografia">
-            <a href="index.html">
+            <a href="/">
                 <img src={tipografiaImagen} alt="Tipografía Evolvente Arquitectura" width={300} />
             </a>
         </div>
@@ -48,6 +48,9 @@ const currentPath = Astro.url.pathname;
         align-items: center;
         margin: 20px;
         margin-right: 60px;
+    }
+    .tipografia {
+        padding-right: 50px;
     }
     nav ul {
         display: flex;

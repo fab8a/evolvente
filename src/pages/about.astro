@@ -12,65 +12,32 @@ import aboutImage from "../assets/images/background.webp";
 <Base>
     <!-- About Page Structure -->
     <Image src={aboutImage} alt="" class="about-image" />
-    <section class="about-container">
-        <!-- Left Column - Content -->
+    <section class="about">
         <div class="about-content">
-            <!-- Company History Section -->
-            <div class="history-section">
-                <h2>Our History</h2>
-                <p>[Company history content]</p>
-            </div>
-
-            <!-- Mission Section -->
-            <div class="mission-section">
-                <h2>Our Mission</h2>
-                <p>[Mission statement content]</p>
-            </div>
-
-            <!-- Values Section -->
-            <div class="values-section">
-                <h2>Our Values</h2>
-                <ul class="values-list">
-                    <li>[Value 1]</li>
-                    <li>[Value 2]</li>
-                    <li>[Value 3]</li>
-                    <!-- Add more values as needed -->
+            <div class="about-text">
+                <h3>Experiencia</h3>
+                <ul>
+                    <li>
+                        Más de 40 años de experiencia en el diseño integro y construcción de
+                        edificios <br /> espacios públicos.
+                    </li>
+                    <li>Mas de 200 proyectos realizados a traves del estado de Baja California.</li>
                 </ul>
             </div>
-        </div>
-
-        <!-- Right Column - Visual Elements -->
-        <div class="about-visuals">
-            <!-- Company Image -->
-            <div class="company-image">
-                <img src="[image-path]" alt="Company Image" />
-            </div>
-
-            <!-- Icons/Graphics for Values -->
-            <div class="values-icons">
-                <div class="icon">
-                    <img src="[icon1-path]" alt="Value 1 Icon" />
-                    <span>[Value 1 Label]</span>
-                </div>
-                <!-- Add more icons as needed -->
-            </div>
-
-            <!-- Additional Visual Elements -->
-            <div class="additional-graphics">
-                <!-- Add any additional visual elements -->
-            </div>
+            <div class="about-text">Two</div>
+            <div class="about-text">Three</div>
+            <div class="about-text">Four</div>
         </div>
     </section>
 
     <!-- CSS Structure -->
     <style>
-        .about-container {
-            display: flex;
-            justify-content: space-between;
-        }
         .about-content {
-            flex: 1;
-            padding: [value];
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            font-size: 1.25rem;
         }
         .about-image {
             width: 100%;
@@ -78,16 +45,15 @@ import aboutImage from "../assets/images/background.webp";
             object-fit: cover; /* crops the image while maintaining aspect ratio */
             object-position: center; /* controls which part of the image to show */
         }
-        .about-visuals {
-            flex: 1;
-            padding: [value];
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
             }
+        }
+        li {
+            list-style-type: "-";
+            line-height: 1.5;
         }
 
         /* Add additional styling as needed */
